@@ -23,7 +23,7 @@ const Landing = () => {
   useEffect(() => {
     const fetchLikesCount = async () => {
       const response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/videos?id=${value}&key=AIzaSyCzkVluUD5j9azi6MhAfa8l1By-pbN4w2g
+        `https://www.googleapis.com/youtube/v3/videos?id=${value}&key=apikey
         &part=snippet,statistics`
       );
       setComment(response.data.items[0].statistics.commentCount);
@@ -42,7 +42,7 @@ const Landing = () => {
   useEffect(() => {
     const fetchChannelDetails = async () => {
       const response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${chid}&key=AIzaSyCzkVluUD5j9azi6MhAfa8l1By-pbN4w2g`
+        `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${chid}&key=apikey`
       );
       setSubscribers(response.data.items[0].statistics.subscriberCount);
       console.log(subscribers);
